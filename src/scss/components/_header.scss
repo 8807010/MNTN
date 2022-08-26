@@ -1,4 +1,349 @@
-/*
+/* HEADER */
+.header {
+  padding-bottom: 843px;
+  padding-top: 64px;
+}
+
+.nav-wrapper {
+  margin-bottom: 198px;
+}
+
+.logo {
   font-family: 'Playfair Display', serif;
-  font-family: 'Gilroy';
-*/
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.nav li+li {
+  margin-left: 40px;
+}
+
+.nav a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  transition: color .2s ease-in;
+  padding-bottom: 5px;
+}
+
+.nav a::after {
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #FBD784;
+  opacity: 0;
+  transition: all .2s ease-in;
+}
+
+.nav a:hover {
+  color: #FBD784;
+}
+
+.nav a:hover::after {
+  bottom: 0;
+  opacity: 1;
+}
+
+.account {
+  position: relative;
+  padding-left: 30px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  transition: color .2s ease-in;
+}
+
+.account:hover {
+  color: #FBD784;
+}
+
+.account::before {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-image: url('./../img/icons/account.svg');
+  background-size: contain;
+}
+
+.nav-button {
+  position: relative;
+  z-index: 9;
+  display: none;
+  height: 25px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: none;
+}
+
+.nav-button:focus,
+.nav-button:active {
+  outline: none;
+}
+
+.nav-button-icon {
+  position: relative;
+  display: block;
+  width: 42px;
+  height: 5px;
+  background-color: #fff;
+}
+
+.nav-button-icon::before {
+  position: absolute;
+  left: 0;
+  top: -10px;
+  content: "";
+  display: block;
+  width: 42px;
+  height: 5px;
+  background-color: #fff;
+}
+
+.nav-button-icon::after {
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  content: "";
+  display: block;
+  width: 42px;
+  height: 5px;
+  background-color: #fff;
+}
+
+.nav-button-close .nav-button-icon {
+  background-color: transparent;
+}
+
+.nav-button-close .nav-button-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.nav-button-close .nav-button-icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.mobile-nav {
+  position: fixed;
+  z-index: 8;
+  top: 0;
+  right: 0;
+  display: none;
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 320px;
+  height: 100%;
+  padding: 70px 70px 50px 30px;
+  background-color: rgba(11, 29, 38, .8);
+}
+
+.mobile-nav .nav,
+.mobile-nav .account {
+  display: block;
+}
+
+.mobile-nav .nav ul {
+  flex-direction: column;
+}
+
+.mobile-nav .nav li {
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+/* HEADER */
+.header {
+  padding-bottom: 843px;
+  padding-top: 64px;
+}
+
+.nav-wrapper {
+  margin-bottom: 198px;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.nav li+li {
+  margin-left: 40px;
+}
+
+.nav a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  transition: color .2s ease-in;
+  padding-bottom: 5px;
+}
+
+.nav a::after {
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #FBD784;
+  opacity: 0;
+  transition: all .2s ease-in;
+}
+
+.nav a:hover {
+  color: #FBD784;
+}
+
+.nav a:hover::after {
+  bottom: 0;
+  opacity: 1;
+}
+
+.account {
+  position: relative;
+  padding-left: 30px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  transition: color .2s ease-in;
+}
+
+.account:hover {
+  color: #FBD784;
+}
+
+.account::before {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-image: url('./../img/icons/account.svg');
+  background-size: contain;
+}
+
+.nav-button {
+  position: relative;
+  z-index: 9;
+  display: none;
+  height: 25px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: none;
+}
+
+.nav-button:focus,
+.nav-button:active {
+  outline: none;
+}
+
+.nav-button-icon {
+  position: relative;
+  display: block;
+  width: 42px;
+  height: 5px;
+  background-color: #fff;
+}
+
+.nav-button-icon::before {
+  position: absolute;
+  left: 0;
+  top: -10px;
+  content: "";
+  display: block;
+  width: 42px;
+  height: 5px;
+  background-color: #fff;
+}
+
+.nav-button-icon::after {
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  content: "";
+  display: block;
+  width: 42px;
+  height: 5px;
+  background-color: #fff;
+}
+
+.nav-button-close .nav-button-icon {
+  background-color: transparent;
+}
+
+.nav-button-close .nav-button-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.nav-button-close .nav-button-icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.mobile-nav {
+  position: fixed;
+  z-index: 8;
+  top: 0;
+  right: 0;
+  display: none;
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 320px;
+  height: 100%;
+  padding: 70px 70px 50px 30px;
+  background-color: rgba(11, 29, 38, .8);
+}
+
+.mobile-nav .nav,
+.mobile-nav .account {
+  display: block;
+}
+
+.mobile-nav .nav ul {
+  flex-direction: column;
+}
+
+.mobile-nav .nav li {
+  margin: 0;
+  margin-bottom: 25px;
+}
