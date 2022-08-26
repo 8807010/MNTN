@@ -1,0 +1,71 @@
+/* HERO */
+.hero {
+  display: block;
+  margin: 0 auto;
+  max-width: 980px;
+  padding: 0 15px;
+  text-decoration: none;
+  transition: transform .4s cubic-bezier(0.660, 0.215, 0.295, 1.640);
+}
+
+.hero:hover {
+  transform: translateY(-5%);
+}
+
+.hero-category {
+  margin-bottom: 32px;
+  position: relative;
+  padding-left: 104px;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.222;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #FBD784;
+
+}
+
+.hero-category::before {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  content: "";
+  width: 72px;
+  height: 2px;
+  background-color: #FBD784;
+}
+
+.hero-title {
+  margin-bottom: 32px;
+  font-family: 'Playfair Display', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 88px;
+  line-height: 1.136;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.hero-scroll {
+  display: inline-block;
+  position: relative;
+  padding-right: 32px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.222;
+  color: #fff;
+}
+
+.hero-scroll::after {
+  display: block;
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 24px;
+  background-image: url('./../img/icons/arrow-down.svg');
+}
