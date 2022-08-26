@@ -17,3 +17,15 @@
   justify-content: center;
   height: var(--vh);
 }
+
+.font {
+
+  font-family: 'Gilroy';
+font-style: normal;
+font-weight: 600;
+font-size: 88px;
+line-height: 100px;
+/* or 114% */
+
+text-transform: capitalize;
+}
