@@ -4,15 +4,30 @@
 @include('partials/head.html')
 
 <body>
+  @include('partials/header.html')
+  <main class="main">
+    <div class="container">
+      <div class="article">
+        <div class="article-text" data-number="01">
+          <div class="article-subtitle">Get Started</div>
+          <h2 class="article-title">What level of hiker are you?</h2>
+          <p>
+            Determining what level of hiker you are can be an important tool when planning future hikes. This hiking
+            level guide will help you plan hikes according to different hike ratings set by various websites like All
+            Trails and Modern Hiker. What type of hiker are you – novice, moderate, advanced moderate, expert, or expert
+            backpacker?
+          </p>
+          <a href="#" class="article-read-more">read more</a>
+        </div>
+        <div class="article-img">
+          <img src="img/pictures/01.jpg" alt="What level of  hiker are you?">
+        </div>
+      </div>
+    </div>
 
-    @include('partials/header.html')
-    <main class="main">
-      
-    </main>
-
-    @include('partials/footer.html')
-    <!-- @include('html/h1.html') пример include -->
-
+  </main>
+  @include('partials/footer.html')
+  <!-- @include('html/h1.html') пример include -->
 </body>
 
 </html>
