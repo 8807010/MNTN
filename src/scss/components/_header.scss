@@ -14,7 +14,6 @@
 }
 
 .header__container-wide {
-  /* Если есть padding слева и справа, то 1760 + 15 + 15 = 1790px */
   max-width: 1790px;
   margin: 0 auto;
   padding: 0 15px;
@@ -105,7 +104,7 @@
   padding: 0;
   cursor: pointer;
   background: none;
-  right: 20px;
+  // right: 30px;
 }
 
 .header__burger:focus,
@@ -163,13 +162,15 @@
   top: 0;
   right: 0;
   display: none;
-  /* display: flex; */
   flex-direction: column;
   justify-content: space-between;
   width: 320px;
   height: 100%;
   padding: 70px 70px 50px 30px;
   background-color: rgba(11, 29, 38, .8);
+
+  animation-name: open;
+  animation-duration: 0.5s
 }
 
 .header__mobile-nav,
@@ -189,4 +190,87 @@
 
 .header__account-link {
   font-size: 25px;
+}
+
+.header__hero {
+  display: block;
+  margin: 0 auto;
+  max-width: 980px;
+  padding: 0 15px;
+  text-decoration: none;
+  transition: transform .4s cubic-bezier(.08, .46, 1, 2);
+}
+
+.header__hero:hover {
+  transform: translateY(-5%);
+}
+
+.header__hero-category {
+  margin-bottom: 32px;
+  position: relative;
+  padding-left: 104px;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.222;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #FBD784;
+}
+
+.header__hero-category::before {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  content: "";
+  width: 72px;
+  height: 2px;
+  background-color: #FBD784;
+}
+
+.header__hero-title {
+  margin-bottom: 32px;
+  font-family: 'Playfair Display', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 88px;
+  line-height: 1.136;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.header__hero-scroll {
+  display: inline-block;
+  position: relative;
+  padding-right: 32px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.222;
+  color: #fff;
+}
+
+.header__hero-scroll::after {
+  display: block;
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 24px;
+  background-image: url('./../img/icons/arrow-down.svg');
+}
+
+
+@keyframes open {
+  from {
+    right: -1000px;
+    opacity: 0
+  }
+
+  to {
+    right: 0;
+    opacity: 1
+  }
 }

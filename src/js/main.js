@@ -17,6 +17,7 @@ console.log(mobileNav);
 navBtn.addEventListener('click', function (event) {
   event.stopPropagation();
   toggleMobileNav();
+  toggleMobileNav.style.transition = "all 0.9s ease";
 });
 
 // Клик по окну за пределами навигации

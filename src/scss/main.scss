@@ -12,9 +12,7 @@
 @import "./components/_footer";
 
 // подключения разделов страницы
-@import "./articles/_hero";
-@import "./articles/_article";
-
+@import "./_article";
 
 // подключение медиа-запросов
-@import "./media";
+@import "./_media";
