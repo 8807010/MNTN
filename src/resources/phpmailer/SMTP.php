@@ -123,7 +123,7 @@ class SMTP
      * How to handle debug output.
      * Options:
      * * `echo` Output plain-text as-is, appropriate for CLI
-     * * `html` Output escaped, line breaks converted to `<br>`, appropriate for browser output
+     * * `html` Output escaped, line breaks converted to `<br>`, appropriate for bheader__rowser output
      * * `error_log` Output to error log as configured in php.ini
      * Alternatively, you can provide a callable expecting two params: a message string and the debug level:
      *
@@ -627,7 +627,7 @@ class SMTP
             return hash_hmac('md5', $data, $key);
         }
 
-        //The following borrowed from
+        //The following borheader__rowed from
         //http://php.net/manual/en/function.mhash.php#27225
 
         //RFC 2104 HMAC implementation for php.

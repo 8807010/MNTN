@@ -1,12 +1,17 @@
-import './_vendor';
-import vars from './_vars';
-import './_functions';
-import './_components';
+// import './_vendor';
+// import vars from './_vars';
+// import './_functions';
+// import './_components';
+
+// import './_mobileMenu';
 
 
-const navBtn = document.querySelector('.nav-button');
-const mobileMav = document.querySelector('.mobile-nav');
+const navBtn = document.querySelector('.header__burger');
+const mobileNav = document.querySelector('.header__mobile');
 const body = document.body;
+
+console.log(mobileNav);
+
 
 // Клик по кнопке
 navBtn.addEventListener('click', function (event) {
@@ -22,12 +27,12 @@ window.addEventListener('click', function () {
 });
 
 // Останавливаем клик внутри открытой мобильной навигации
-mobileMav.addEventListener('click', function (event) {
+mobileNav.addEventListener('click', function (event) {
   event.stopPropagation();
 });
 
 function toggleMobileNav() {
-  mobileMav.classList.toggle('mobile-nav-active');
-  navBtn.classList.toggle('nav-button-close');
+  mobileNav.classList.toggle('header__mobile-active');
+  navBtn.classList.toggle('header__mobile-close');
   body.classList.toggle('no-scroll');
 };

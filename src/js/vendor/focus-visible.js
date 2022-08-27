@@ -27,7 +27,7 @@ function applyFocusVisiblePolyfill(scope) {
   };
 
   /**
-   * Helper function for legacy browsers and iframes which sometimes focus
+   * Helper function for legacy bheader__rowsers and iframes which sometimes focus
    * elements like document, body, and non-interactive SVG.
    * @param {Element} el
    */
@@ -131,7 +131,7 @@ function applyFocusVisiblePolyfill(scope) {
 
   /**
    * On `focus`, add the `focus-visible` class to the target if:
-   * - the target received focus as a result of keyboard navigation, or
+   * - the target received focus as a result of keyboard header__navigation, or
    * - the event target is an element that will likely require interaction
    *   via the keyboard (e.g. a text box)
    * @param {Event} e
@@ -166,7 +166,7 @@ function applyFocusVisiblePolyfill(scope) {
       // regular focus change.
       hadFocusVisibleRecently = true;
       window.clearTimeout(hadFocusVisibleRecentlyTimeout);
-      hadFocusVisibleRecentlyTimeout = window.setTimeout(function() {
+      hadFocusVisibleRecentlyTimeout = window.setTimeout(function () {
         hadFocusVisibleRecently = false;
       }, 100);
       removeFocusVisibleClass(e.target);
@@ -180,7 +180,7 @@ function applyFocusVisiblePolyfill(scope) {
    */
   function onVisibilityChange(e) {
     if (document.visibilityState === 'hidden') {
-      // If the tab becomes active again, the browser will handle calling focus
+      // If the tab becomes active again, the bheader__rowser will handle calling focus
       // on the element (Safari actually calls it twice).
       // If this tab change caused a blur on an element with focus-visible,
       // re-apply the class when the user switches back to the tab.

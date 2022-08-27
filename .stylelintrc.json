@@ -117,7 +117,7 @@
         "orphans",
         "widows",
         "flex",
-        "flex-grow",
+        "flex-gheader__row",
         "flex-shrink",
         "flex-basis",
         "flex-flow",
@@ -139,20 +139,20 @@
         "grid-area",
         "grid-auto-columns",
         "grid-auto-flow",
-        "grid-auto-rows",
+        "grid-auto-header__rows",
         "grid-column",
         "grid-column-end",
         "grid-column-gap",
         "grid-column-start",
         "grid-gap",
-        "grid-row",
-        "grid-row-end",
-        "grid-row-gap",
-        "grid-row-start",
+        "grid-header__row",
+        "grid-header__row-end",
+        "grid-header__row-gap",
+        "grid-header__row-start",
         "grid-template",
         "grid-template-areas",
         "grid-template-columns",
-        "grid-template-rows",
+        "grid-template-header__rows",
         "list-style",
         "list-style-type",
         "list-style-position",
@@ -738,8 +738,12 @@
     "scss/percent-placeholder-pattern": null,
     "scss/selector-no-redundant-nesting-selector": true
   },
-  "overrides": [{
-    "files": ["src/scss/*/**.scss"],
-    "customSyntax": "postcss-scss"
-  }]
+  "overrides": [
+    {
+      "files": [
+        "src/scss/*/**.scss"
+      ],
+      "customSyntax": "postcss-scss"
+    }
+  ]
 }

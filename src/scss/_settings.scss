@@ -3,6 +3,10 @@
   font-family: 'Gilroy';
 */
 
+html, body {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -17,6 +21,7 @@ body {
   background-size: 100% auto;
   background-repeat: no-repeat;
   color: #fff;
+
 }
 
 h1,
@@ -40,21 +45,17 @@ img {
   overflow-y: hidden;
 }
 
-.container-wide {
-  /* Если есть padding слева и справа, то 1760 + 15 + 15 = 1790px */
-  max-width: 1790px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
 .container {
-  max-width: $content-width;
+  max-width: 1492px;
   margin: 0 auto;
   padding: 0 15px;
 }
 
-.row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.logo {
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.2);
 }
