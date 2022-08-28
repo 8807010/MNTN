@@ -33,6 +33,7 @@ window.onload = function () {
 
       requestAnimationFrame(setMouseParallaxStyle);
     }
+
     setMouseParallaxStyle();
 
     parallax.addEventListener("mousemove", function (e) {
@@ -64,7 +65,7 @@ const callback = function (entries, observer) {
   const observer = new IntersectionObserver(callback, {
     threshold: thresholdSets
   });
-  
+
   observer.observe(document.querySelector('.content'));
 
   function setParallaxItemsStyle(scrollTopProcent) {

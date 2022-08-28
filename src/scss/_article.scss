@@ -5,118 +5,117 @@
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-}
 
-/* Для четного блока */
-.article:nth-child(even) {
-  flex-direction: row-reverse;
-}
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+  }
 
-.article__img {
-  max-width: 100%;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgb(255, 255, 255);
-}
+  &__img {
+    max-width: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
 
-.article__img img {
-  transition: all 0.3s ease;
-}
+    & img {
+      transition: all 0.3s ease;
 
-.article__img img:hover {
-  transform: scale(1.2);
-}
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
 
-.article__text {
-  position: relative;
-  padding-left: 150px;
-  max-width: 782px;
-  margin-right: 20px;
-}
+  &__text {
+    position: relative;
+    padding-left: 150px;
+    max-width: 782px;
+    margin-right: 20px;
 
-.article__text::before {
-  position: absolute;
-  left: 0;
-  top: 0;
-  transform: translateY(-50%);
-  display: block;
-  content: attr(data-number);
-  width: 240px;
-  height: 240px;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 240px;
-  line-height: 1;
-  color: rgba(255, 255, 255, .1);
-}
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: translateY(-50%);
+      display: block;
+      content: attr(data-number);
+      width: 240px;
+      height: 240px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 240px;
+      line-height: 1;
+      color: rgba(255, 255, 255, .1);
+    }
+  }
 
-.article__subtitle {
-  margin-bottom: 32px;
-  position: relative;
-  padding-left: 96px;
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 1.222;
-  letter-spacing: 6px;
-  text-transform: uppercase;
-  color: #FBD784;
+  &__subtitle {
+    margin-bottom: 32px;
+    position: relative;
+    padding-left: 96px;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.222;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #FBD784;
+    overflow: hidden;
 
-}
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      display: block;
+      content: "";
+      width: 72px;
+      height: 2px;
+      background-color: #FBD784;
+    }
+  }
 
-.article__subtitle::before {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  display: block;
-  content: "";
-  width: 72px;
-  height: 2px;
-  background-color: #FBD784;
-}
+  &__title {
+    margin-bottom: 27px;
+    max-width: 555px;
+    font-family: 'Playfair Display', serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 1.2;
+  }
 
-.article__title {
-  margin-bottom: 27px;
-  max-width: 555px;
-  font-family: 'Playfair Display', serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 64px;
-  line-height: 1.2;
-}
+  &__text p {
+    margin-bottom: 27px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.78;
+  }
 
-.article__text p {
-  margin-bottom: 27px;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 1.78;
-}
+  &__read-more {
+    display: inline-block;
+    position: relative;
+    padding-right: 40px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.222;
+    color: #FBD784;
+    text-decoration: none;
+    transition: all 0.3s ease;
 
-.article__read-more {
-  display: inline-block;
-  position: relative;
-  padding-right: 40px;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 1.222;
-  color: #FBD784;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
+    &:hover {
+      padding-left: 10px;
+      transform: scale(1.2);
+    }
 
-.article__read-more:hover {
-  padding-left: 10px;
-  transform: scale(1.2);
-}
-
-.article__read-more::after {
-  display: block;
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 24px;
-  height: 16px;
-  background-image: url('./../img/icons/arrow-right.svg');
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 16px;
+      background-image: url('./../img/icons/arrow-right.svg');
+    }
+  }
 }
