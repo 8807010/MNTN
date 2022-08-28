@@ -1,10 +1,16 @@
 .header {
   padding-bottom: 843px;
   padding-top: 64px;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
 .header__wrapper {
   margin-bottom: 198px;
+  min-height: 100vh;
 }
 
 .header__row {
@@ -17,6 +23,8 @@
   max-width: 1790px;
   margin: 0 auto;
   padding: 0 15px;
+  z-index: 11;
+  position: relative;
 }
 
 .header__logo {
@@ -199,6 +207,8 @@
   padding: 0 15px;
   text-decoration: none;
   transition: transform .4s cubic-bezier(.08, .46, 1, 2);
+  z-index: 10;
+  position: relative;
 }
 
 .header__hero:hover {
@@ -272,5 +282,64 @@
   to {
     right: 0;
     opacity: 1
+  }
+}
+
+
+.parallax-images {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  left: -10%;
+  top: -10%;
+  z-index: 10;
+}
+
+.images-parallax__item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.images-parallax__clouds,
+.images-parallax__mountains,
+.images-parallax__human {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+
+.images-parallax__clouds {
+  background: url('./../img/bg/clouds.jpg');
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  top: 0;
+}
+
+.images-parallax__mountains {
+  background: url('./../img/bg/mountains.png');
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  top: 15%;
+  z-index: 20;
+}
+
+.images-parallax__human {
+  background: url('./../img/bg/human.png');
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  top: 40%;
+  z-index: 21;
+}
+
+@media (max-aspect-ratio: 3/2) {
+  .images-parallax__human {
+    background-position: 25% top;
   }
 }
