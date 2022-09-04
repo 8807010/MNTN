@@ -1,6 +1,84 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/js/_bg.js":
+/*!***********************!*\
+  !*** ./src/js/_bg.js ***!
+  \***********************/
+/***/ (() => {
+
+window.onload = function () {
+  const parallax = document.querySelector('.header__wrapper');
+
+  if (parallax) {
+    const content = document.querySelector('.images-parallax');
+    const clouds = document.querySelector('.images-parallax__clouds');
+    const mountains = document.querySelector('.images-parallax__mountains');
+    const human = document.querySelector('.images-parallax__human'); //коэффиценты
+
+    const forClouds = 40;
+    const forMountains = 20;
+    const forHuman = 10; //скорость анимации
+
+    const speed = 0.05; //объявление переменных
+
+    let positionX = 0,
+        positionY = 0;
+    let coordXprocent = 0,
+        coordYprocent = 0;
+
+    function setMouseParallaxStyle() {
+      const distX = coordXprocent - positionX;
+      const distY = coordYprocent - positionY;
+      positionX = positionX + distX * speed;
+      positionY = positionY + distY * speed; //передаем стили
+
+      clouds.style.cssText = "transform: translate(".concat(positionX / forClouds, "%,").concat(positionY / forClouds, "%);");
+      mountains.style.cssText = "transform: translate(".concat(positionX / forMountains, "%,").concat(positionY / forMountains, "%);");
+      human.style.cssText = "transform: translate(".concat(positionX / forHuman, "%,").concat(positionY / forHuman, "%);");
+      requestAnimationFrame(setMouseParallaxStyle);
+    }
+
+    setMouseParallaxStyle();
+    parallax.addEventListener("mousemove", function (e) {
+      //получение ширины и высоты бока
+      const parallaxWidth = parallax.offsetWidth;
+      const parallaxHeight = parallax.offsetHeight; //ноль по середины
+
+      const coordX = e.pageX - parallaxWidth / 2;
+      const coordY = e.pageY - parallaxHeight / 2; //получаем проценты
+
+      coordXprocent = coordX / parallaxWidth * 100;
+      coordYprocent = coordY / parallaxHeight * 100;
+    });
+  }
+}; //пораллакс при скролле
+
+
+let thresholdSets = [];
+
+for (let i = 0; i <= 1.0; i += 0.005) {
+  thresholdSets.push(i);
+}
+
+const callback = function (entries, observer) {
+  const scrollTopProcent = window.pageYOffset / parallax.offsetHeight * 100;
+  setParallaxItemsStyle(scrollTopProcent);
+};
+
+const observer = new IntersectionObserver(callback, {
+  threshold: thresholdSets
+});
+observer.observe(document.querySelector('.main'));
+
+function setParallaxItemsStyle(scrollTopProcent) {
+  content.style.cssText = "transform: translate(0%, -".concat(scrollTopProcent / 9, "%);");
+  mountains.parentElement.style.cssText = "transform: translate(0%, -".concat(scrollTopProcent / 6, "%);");
+  human.parentElement.style.cssText = "transform: translate(0%, -".concat(scrollTopProcent / 3, "%);");
+}
+
+/***/ }),
+
 /***/ "./src/js/_burger.js":
 /*!***************************!*\
   !*** ./src/js/_burger.js ***!
@@ -114,15 +192,17 @@ var __webpack_exports__ = {};
   !*** ./src/js/main.js ***!
   \************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _burger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_burger */ "./src/js/_burger.js");
-/* harmony import */ var _burger__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_burger__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _bg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_bg */ "./src/js/_bg.js");
+/* harmony import */ var _bg__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_bg__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _burger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_burger */ "./src/js/_burger.js");
+/* harmony import */ var _burger__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_burger__WEBPACK_IMPORTED_MODULE_1__);
 // import './_vendor';
 // import vars from './_vars';
 // import './_functions';
 // import './_components';
 // import './_mobileMenu';
-// import './_bg';
- //
+
+
 })();
 
 /******/ })()
